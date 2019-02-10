@@ -1,7 +1,7 @@
-const createLogger = require('logging');
+const { default: createLogger } = require('logging');
 
 const createPromiseLogger = (...args) => {
-  const logger = createLogger.default(...args);
+  const logger = createLogger(...args);
   const levels = Object.keys(logger);
 
   const promiseLogger = levels.reduce((acc, level) => {
