@@ -1,6 +1,6 @@
 # PromiseLogging
 
-This module acts as a wrapper for the [logging](https://www.npmjs.com/package/logging) package to simplify printing intermediate values in promise chains.
+This module acts as a wrapper for the [logging](https://www.npmjs.com/package/logging) package to simplify printing intermediate values in Promise chains.
 
 ## Usage
 
@@ -42,11 +42,11 @@ Before:
 ```js
 promise1
   .then((value1) => {
-    logger.info(`Passing ${value1} to the next promise`);
+    logger.info(`Passing ${value1} to the next Promise`);
     return promise2(value1);
   })
   .then((value2) => {
-    logger.info('Resolved promise 2!')
+    logger.info('Resolved Promise 2!')
     return promise3(value2);
   })
   ...
@@ -55,9 +55,9 @@ promise1
 After:
 ```js
 promise1
-  .then(value1 => logger.info(`Passing ${value1} to the next promise`)(value1))
+  .then(value1 => logger.info(`Passing ${value1} to the next Promise`)(value1))
   .then(value1 => promise2(value1))
-  .then(logger.info('Resolved promise 2!'))
+  .then(logger.info('Resolved Promise 2!'))
   .then(value2 => promise3(value2))
   ...
 ```

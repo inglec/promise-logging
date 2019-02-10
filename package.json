@@ -12,7 +12,8 @@
   },
   "keywords": [
     "logging",
-    "logger"
+    "logger",
+    "Promise"
   ],
   "author": "Ciarán Ingle",
   "bugs": {
