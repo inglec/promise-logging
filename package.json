@@ -1,0 +1,27 @@
+{
+  "name": "promise-logging",
+  "version": "1.0.0",
+  "description": "A wrapper for 'logging' to simplify printing values in Promise chains",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inglec/promise-logging.git"
+  },
+  "keywords": [
+    "logging",
+    "logger"
+  ],
+  "author": "Ciarán Ingle",
+  "bugs": {
+    "url": "https://github.com/inglec/promise-logging/issues"
+  },
+  "homepage": "https://github.com/inglec/promise-logging#readme",
+  "dependencies": {
+    "logging": "^3.2.0"
+  },
+  "devDependencies": {
+    "jest": "^24.1.0"
+  }
+}
