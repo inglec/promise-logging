@@ -7,10 +7,8 @@ const createPromiseLogger = (...args) => {
   const promiseLogger = levels.reduce((acc, level) => {
     // Wrap each logger level in a function which returns its argument.
     acc[level] = (...messages) => {
-      return (promiseResult) => {
-        logger[level](...messages);
-        return promiseResult;
-      };
+      logger[level](...messages);
+      return promiseResult => promiseResult;
     }
     return acc;
   }, {});
