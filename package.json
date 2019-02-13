@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A wrapper for 'logging' to simplify printing values in Promise chains",
   "scripts": {
+    "lint": "eslint src",
     "test": "jest"
   },
   "main": "src/index.js",
@@ -24,6 +25,9 @@
     "logging": "^3.2.0"
   },
   "devDependencies": {
+    "eslint": "^5.13.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
     "jest": "^24.1.0"
   }
 }
