@@ -4,13 +4,16 @@ const createPromiseLogger = (...args) => {
   const logger = createLogger(...args);
   const levels = Object.keys(logger);
 
+  // New levels of promise logger.
   const promiseLogger = levels.reduce((acc, level) => {
     // Make each logger level return an identity function.
-    acc[level] = (...messages) => {
-      logger[level](...messages);
+    acc[`${level}Await`] = (...messages) => (
+      (promiseResult) => {
+        logger[level](...messages);
 
-      return promiseResult => promiseResult;
-    };
+        return promiseResult;
+      }
+    );
 
     // Make each logger level an identity function.
     acc[`${level}Id`] = (promiseResult) => {
@@ -22,7 +25,10 @@ const createPromiseLogger = (...args) => {
     return acc;
   }, {});
 
-  return promiseLogger;
+  return {
+    ...logger,
+    ...promiseLogger,
+  };
 };
 
 module.exports = createPromiseLogger;
